@@ -4,25 +4,32 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: oklch(0.985 0.006 84);
-  --foreground: oklch(0.23 0.03 20);
-  --card: oklch(0.992 0.004 84 / 0.96);
-  --card-foreground: oklch(0.23 0.03 20);
-  --popover: oklch(0.992 0.004 84 / 0.98);
-  --popover-foreground: oklch(0.23 0.03 20);
-  --primary: oklch(0.41 0.15 10);
-  --primary-foreground: oklch(0.99 0.005 84);
-  --secondary: oklch(0.95 0.02 85);
-  --secondary-foreground: oklch(0.3 0.04 20);
-  --muted: oklch(0.955 0.012 85);
-  --muted-foreground: oklch(0.47 0.04 28);
-  --accent: oklch(0.76 0.1 155);
-  --accent-foreground: oklch(0.18 0.03 20);
-  --destructive: oklch(0.6 0.2 25);
-  --destructive-foreground: oklch(0.98 0.005 84);
-  --border: oklch(0.88 0.02 70);
-  --input: oklch(0.975 0.01 84);
-  --ring: oklch(0.41 0.15 10);
+  /* Daily Trend Press — brand (reference: #FFB200 #EB5B00 #D91656 #640D5F) */
+  --brand-gold: #ffb200;
+  --brand-orange: #eb5b00;
+  --brand-rose: #d91656;
+  --brand-plum: #640d5f;
+  --brand-plum-dark: #3f0a3d;
+  --brand-surface: #fffcf7;
+  --background: #fffcf7;
+  --foreground: #1a0f18;
+  --card: #ffffff;
+  --card-foreground: #1a0f18;
+  --popover: #ffffff;
+  --popover-foreground: #1a0f18;
+  --primary: #640d5f;
+  --primary-foreground: #fff8f0;
+  --secondary: #fff0f5;
+  --secondary-foreground: #3f0a3d;
+  --muted: #f4ece6;
+  --muted-foreground: #5c4a52;
+  --accent: #ffb200;
+  --accent-foreground: #2a1608;
+  --destructive: #d91656;
+  --destructive-foreground: #fff8f6;
+  --border: #ead8cc;
+  --input: #fffaf5;
+  --ring: #eb5b00;
   --chart-1: oklch(0.41 0.15 10);
   --chart-2: oklch(0.56 0.17 18);
   --chart-3: oklch(0.76 0.1 155);
@@ -128,9 +135,9 @@
     @apply bg-background text-foreground;
     min-height: 100vh;
     background-image:
-      radial-gradient(circle at top left, rgba(110, 26, 55, 0.09), transparent 32%),
-      radial-gradient(circle at top right, rgba(114, 186, 169, 0.12), transparent 28%),
-      linear-gradient(180deg, rgba(255, 252, 246, 0.96) 0%, rgba(250, 244, 235, 0.98) 36%, rgba(247, 241, 230, 1) 100%);
+      radial-gradient(ellipse 120% 80% at 0% -20%, rgba(100, 13, 95, 0.07), transparent 45%),
+      radial-gradient(ellipse 90% 60% at 100% 0%, rgba(235, 91, 0, 0.06), transparent 40%),
+      linear-gradient(180deg, #fffcf7 0%, #fff5eb 100%);
     background-attachment: fixed;
   }
 
@@ -347,3 +354,29 @@ body[data-motion-pack='editorial-soft'] main section {
   from { opacity: 0; }
   to { opacity: 1; }
 }
+
+@keyframes dtp-rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes dtp-orbit {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.dtp-animate-in {
+  animation: dtp-rise 0.55s ease-out both;
+}
+
+.dtp-delay-1 { animation-delay: 0.08s; }
+.dtp-delay-2 { animation-delay: 0.16s; }
+.dtp-delay-3 { animation-delay: 0.24s; }
+.dtp-delay-4 { animation-delay: 0.32s; }

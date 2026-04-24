@@ -2,80 +2,85 @@ import type { TaskKey } from '@/lib/site-config'
 
 export const siteContent = {
   navbar: {
-    tagline: 'Independent news desk',
+    tagline: 'Press release distribution & newswire',
   },
   footer: {
-    tagline: 'Simple publishing for press-style updates',
+    tagline: 'Wire-grade reach for teams that ship news on a schedule.',
   },
   hero: {
-    badge: 'Latest updates',
-    title: ['Clear publishing, simple reading, no extra noise.'],
+    badge: 'Press wire',
+    title: ['Press Release Distribution Since 2004'],
     description:
-      'A minimal article-style publishing template built for regular updates, announcements, and media distribution posts.',
+      'Daily Trend Press helps organizations publish announcements with a clear archive, readable story pages, and distribution flows built for busy communications teams.',
     primaryCta: {
-      label: 'Browse latest posts',
-      href: '/updates',
+      label: 'Sign Up',
+      href: '/register',
     },
     secondaryCta: {
-      label: 'Contact us',
-      href: '/contact',
+      label: 'View Pricing',
+      href: '/pricing',
     },
-    searchPlaceholder: 'Search posts',
-    focusLabel: 'Latest',
-    featureCardBadge: 'editor note',
-    featureCardTitle: 'Recent updates appear directly on the homepage.',
+    searchPlaceholder: 'Search press releases',
+    focusLabel: 'Latest wire',
+    featureCardBadge: 'Why teams stay',
+    featureCardTitle: 'One home for releases, pricing, and reader trust.',
     featureCardDescription:
-      'The homepage works as a clean front page so new posts stay visible without decorative sections getting in the way.',
+      'The homepage highlights your latest wire items, trust markers, and direct paths to plans so nothing gets lost in a generic blog layout.',
   },
   home: {
     metadata: {
-      title: 'Latest updates and newsroom posts',
+      title: 'Daily Trend Press — press release distribution & newswire',
       description:
-        'Read the latest updates, announcements, and stories through a simple archive-first publishing experience.',
-      openGraphTitle: 'Latest updates and newsroom posts',
+        'Distribute press releases with a professional newswire experience: clear pricing, strong story pages, and an archive built for scanning.',
+      openGraphTitle: 'Daily Trend Press — press release distribution',
       openGraphDescription:
-        'A simple publishing template for updates, announcements, and readable article pages.',
-      keywords: ['newsroom posts', 'latest updates', 'announcements', 'press articles'],
+        'Publish announcements with wire-style presentation, structured archives, and pricing that stays easy to compare.',
+      keywords: [
+        'press release distribution',
+        'newswire',
+        'media announcements',
+        'PR wire',
+        'company news',
+        'Daily Trend Press',
+      ],
     },
-    introBadge: 'About',
-    introTitle: 'A quiet publishing template made for regular updates.',
+    introBadge: 'Newswire',
+    introTitle: 'Built for communications that need both speed and polish.',
     introParagraphs: [
-      'This template is designed for sites that publish straightforward updates and want the homepage to behave like a clean front page rather than a product landing page.',
-      'Posts are visible immediately, archives stay easy to scan, and the reading page keeps the focus on the article itself.',
-      'The interface is intentionally simple so the site feels usable, familiar, and fast to update.',
+      'Daily Trend Press is tuned for teams that publish often: releases stay easy to find, detail pages read like a professional wire, and the archive supports category and search without feeling like a generic template.',
+      'We keep the interface light so your stories stay in focus, while structure underneath stays compatible with the wider publishing system.',
     ],
-    sideBadge: 'What it prioritizes',
+    sideBadge: 'What you get',
     sidePoints: [
-      'Recent posts directly on the homepage.',
-      'Simple archive layout with sidebar search and recent items.',
-      'Readable article pages without comments or extra modules.',
-      'A publishing-first structure that stays easy to maintain.',
+      'A homepage that sells distribution, not blog noise.',
+      'Archive pages with category filters and search hand-off.',
+      'Detail pages with share tools and related reading.',
     ],
     primaryLink: {
-      label: 'Open archive',
+      label: 'Browse the wire',
       href: '/updates',
     },
     secondaryLink: {
-      label: 'Contact desk',
+      label: 'Talk to us',
       href: '/contact',
     },
   },
   cta: {
-    badge: 'Get in touch',
-    title: 'Use this template when publishing regular updates matters more than visual effects.',
+    badge: 'Ready when you are',
+    title: 'Need a calmer way to ship announcements at volume?',
     description:
-      'A straightforward layout for announcements, media coverage, partner updates, and newsroom-style content.',
+      'Start with a plan, publish through the same routes you already use, and keep the reading experience consistent end to end.',
     primaryCta: {
-      label: 'Contact us',
-      href: '/contact',
+      label: 'View plans',
+      href: '/pricing',
     },
     secondaryCta: {
-      label: 'View archive',
+      label: 'Read latest releases',
       href: '/updates',
     },
   },
-  taskSectionHeading: 'Latest posts',
-  taskSectionDescriptionSuffix: 'Read the newest published updates.',
+  taskSectionHeading: 'Latest press releases',
+  taskSectionDescriptionSuffix: 'Fresh items from the wire, updated as your team publishes.',
 } as const
 
 export const taskPageMetadata: Record<Exclude<TaskKey, 'comment' | 'org' | 'social'>, { title: string; description: string }> = {
@@ -108,8 +113,8 @@ export const taskPageMetadata: Record<Exclude<TaskKey, 'comment' | 'org' | 'soci
     description: 'Open PDFs and downloadable files.',
   },
   mediaDistribution: {
-    title: 'Latest updates',
-    description: 'Read the latest published updates and announcements.',
+    title: 'Press release archive',
+    description: 'Scan the latest newswire posts with filters, search, and full release pages.',
   },
 }
 
@@ -128,14 +133,14 @@ export const taskIntroCopy: Record<
   comment: { title: 'Comments', paragraphs: ['Commentary and response posts.'], links: [{ label: 'Home', href: '/' }] },
   org: { title: 'Organizations', paragraphs: ['Organization pages and entities.'], links: [{ label: 'Home', href: '/' }] },
   mediaDistribution: {
-    title: 'Latest updates',
+    title: 'Press release archive',
     paragraphs: [
-      'This archive is designed for straightforward publishing: regular updates, announcements, and media-style posts presented in a clean reading format.',
-      'The layout stays simple so visitors can scan headlines quickly, open stories easily, and move through the archive without distraction.',
+      'Browse every live announcement in one place. Use category filters to jump between topics, or open search for keyword-wide discovery across the full wire.',
+      'Each item opens to a full release view with clear headline hierarchy, share actions, and related items so readers can keep moving without hitting dead ends.',
     ],
     links: [
       { label: 'Home', href: '/' },
-      { label: 'Contact', href: '/contact' },
+      { label: 'Pricing', href: '/pricing' },
     ],
   },
 }
