@@ -1,7 +1,7 @@
 export const siteIdentity = {
   code: process.env.NEXT_PUBLIC_SITE_CODE || 'fyvzw7y1ku',
   name: process.env.NEXT_PUBLIC_SITE_NAME || 'Dailytrendpress',
-  tagline: process.env.NEXT_PUBLIC_SITE_TAGLINE || 'Press release newswire',
+  tagline: process.env.NEXT_PUBLIC_SITE_TAGLINE || 'Press media newswire',
   description:
     process.env.NEXT_PUBLIC_SITE_DESCRIPTION ||
     'Daily Trend Press is a press release newswire for teams that need structured announcements, scannable archives, and reader-ready story pages.',

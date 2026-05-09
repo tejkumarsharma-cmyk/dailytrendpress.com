@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { Calendar, Facebook, Linkedin, Share2, Twitter } from 'lucide-react'
+import { Facebook, Linkedin, Share2, Twitter } from 'lucide-react'
 import { NavbarShell } from '@/components/shared/navbar-shell'
 import { Footer } from '@/components/shared/footer'
 import { fetchTaskPostBySlug, fetchTaskPosts } from '@/lib/task-data'
@@ -66,9 +66,9 @@ export async function TaskDetailPageOverride({ slug }: { task: TaskKey; slug: st
   const dateStr = post.publishedAt
     ? new Date(post.publishedAt).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
     : ''
-  const rawCat = content.category || post.tags?.[0] || 'Press release'
+  const rawCat = content.category || post.tags?.[0] || 'Press media'
   const catLabel =
-    typeof rawCat === 'string' ? CATEGORY_OPTIONS.find((c) => c.slug === normalizeCategory(rawCat))?.name || rawCat : 'Press release'
+    typeof rawCat === 'string' ? CATEGORY_OPTIONS.find((c) => c.slug === normalizeCategory(rawCat))?.name || rawCat : 'Press media'
   const subtitle =
     (typeof content.excerpt === 'string' && content.excerpt.trim()) ||
     (post.summary || '').split('.')[0] ||
@@ -102,11 +102,6 @@ export async function TaskDetailPageOverride({ slug }: { task: TaskKey; slug: st
             <h1 className="mt-5 text-3xl font-semibold leading-tight tracking-[-0.03em] sm:text-4xl lg:text-[2.4rem]">{post.title}</h1>
             <p className="mt-4 text-lg leading-relaxed text-[#5c4a52] sm:text-xl">{subtitle}</p>
             <div className="mt-6 flex flex-wrap items-center gap-4 text-sm text-[#5c4a52]">
-              <span className="inline-flex items-center gap-1.5">
-                <Calendar className="h-4 w-4" />
-                {dateStr}
-              </span>
-              <span>·</span>
               <span>By {author}</span>
             </div>
             <div className="mt-8 flex flex-wrap gap-2">
@@ -194,9 +189,6 @@ export async function TaskDetailPageOverride({ slug }: { task: TaskKey; slug: st
           <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
             <Link href="/register" className="inline-flex rounded-full bg-white px-6 py-2.5 text-sm font-bold text-[#7a1038] shadow">
               Sign up
-            </Link>
-            <Link href="/pricing" className="inline-flex rounded-full border-2 border-white/90 px-6 py-2.5 text-sm font-bold text-white hover:bg-white/10">
-              Learn more
             </Link>
           </div>
         </div>

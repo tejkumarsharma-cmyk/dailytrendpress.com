@@ -47,7 +47,7 @@ function getCategoryLabel(post: SitePost) {
     const n = normalizeCategory(raw)
     return CATEGORY_OPTIONS.find((c) => c.slug === n)?.name || raw
   }
-  return 'Press release'
+  return 'Press media'
 }
 
 function excerpt(text?: string | null) {
@@ -58,8 +58,8 @@ function excerpt(text?: string | null) {
 
 const features = [
   {
-    title: 'Competitive Pricing',
-    description: 'Tiered plans so you can match distribution depth to each campaign without surprise fees on the surface.',
+    title: 'Wide Distribution Reach',
+    description: 'Get your releases in front of journalists, editors, and syndication partners across hundreds of channels.',
     icon: LineChart,
     accent: 'from-[#640D5F] to-[#D91656]',
   },
@@ -80,44 +80,6 @@ const features = [
     description: 'Editorial-style presentation and archive patterns borrowed from major wires—without a recycled template look.',
     icon: BadgeCheck,
     accent: 'from-[#FFB200] to-[#EB5B00]',
-  },
-] as const
-
-const pricingTiers = [
-  {
-    name: 'Basic News',
-    price: 49,
-    border: 'border-t-4 border-[#FFB200]',
-    blurb: 'Get headlines live with a focused syndication footprint.',
-    features: ['Core wire formatting', 'Standard publish window', 'Email hand-off', 'Archive hosting'],
-  },
-  {
-    name: 'Standard',
-    price: 89,
-    border: 'border-t-4 border-[#EB5B00]',
-    blurb: 'Stronger reach for product drops and public notices.',
-    features: ['Broader channel mix', 'Rich text + assets', 'Priority review lane', 'Performance snapshot'],
-  },
-  {
-    name: 'Advanced',
-    price: 139,
-    border: 'border-t-4 border-t-[#D91656]',
-    blurb: 'For teams publishing weekly with multiple approvers.',
-    features: ['Team seats', 'Embargo windows', 'Category routing', 'Quarterly readership recap'],
-  },
-  {
-    name: 'Premium',
-    price: 199,
-    border: 'border-t-4 border-[#640D5F]',
-    blurb: 'Maximum push days when your story must dominate the day.',
-    features: ['Top placement in rotation', 'Inclusion in digest sends', 'Dedicated queue', 'SME review block'],
-  },
-  {
-    name: 'Visibility',
-    price: 49,
-    border: 'border-t-4 border-[#D91656]',
-    blurb: 'Launch visibility for targeted audiences without full-spectrum plans.',
-    features: ['Narrow vertical reach', 'Fast turnaround', 'Great for test campaigns', 'Upgrade any time'],
   },
 ] as const
 
@@ -156,12 +118,6 @@ export async function HomePageOverride() {
                 >
                   {siteContent.hero.primaryCta.label}
                   <ArrowRight className="h-4 w-4" />
-                </Link>
-                <Link
-                  href={siteContent.hero.secondaryCta.href}
-                  className="inline-flex items-center justify-center rounded-full border-2 border-[#640D5F]/25 bg-white/80 px-6 py-3.5 text-sm font-semibold text-[#3f0a3d] backdrop-blur transition hover:border-[#EB5B00]/50 hover:text-[#D91656]"
-                >
-                  {siteContent.hero.secondaryCta.label}
                 </Link>
               </div>
             </div>
@@ -219,53 +175,6 @@ export async function HomePageOverride() {
           </div>
         </section>
 
-        {/* Pricing */}
-        <section className="border-t border-[#ead8cc]/80 bg-gradient-to-b from-white to-[#fff7f0] py-16 sm:py-20">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6">
-            <h2 className="text-center text-3xl font-semibold tracking-[-0.03em] text-[#1a0f18] sm:text-4xl">
-              Pricing Plans to Choose From
-            </h2>
-            <p className="mx-auto mt-3 max-w-2xl text-center text-sm text-[#5c4a52]">
-              Clear tiers, predictable upgrades. Compare what ships with every push.
-            </p>
-            <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
-              {pricingTiers.map((tier) => (
-                <div
-                  key={tier.name}
-                  className={`flex h-full flex-col overflow-hidden rounded-2xl border border-[#ead8cc] bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg ${tier.border}`}
-                >
-                  <div className="p-5 pb-0">
-                    <h3 className="text-sm font-bold uppercase tracking-[0.12em] text-[#5c4a52]">{tier.name}</h3>
-                    <p className="mt-3 text-3xl font-bold tabular-nums text-[#1a0f18]">
-                      ${tier.price}
-                      <span className="text-sm font-medium text-[#5c4a52]"> / release</span>
-                    </p>
-                    <p className="mt-2 text-sm text-[#5c4a52]">{tier.blurb}</p>
-                  </div>
-                  <ul className="mt-4 grow space-y-2.5 border-t border-[#f0e3d8] px-5 py-4 text-sm text-[#3f3438]">
-                    {tier.features.map((line) => (
-                      <li key={line} className="flex gap-2">
-                        <span className="mt-0.5 text-[#D91656]" aria-hidden>
-                          ✓
-                        </span>
-                        {line}
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="p-5 pt-0">
-                    <Link
-                      href="/register"
-                      className="flex w-full items-center justify-center rounded-full bg-[#1a0f18] py-3 text-sm font-semibold text-white transition hover:bg-[#3f0a3d]"
-                    >
-                      Get started
-                    </Link>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* CTA */}
         <section className="bg-gradient-to-r from-[#EB5B00] to-[#D91656] py-14 text-center sm:py-16">
           <h2 className="text-2xl font-semibold text-white sm:text-3xl">Ready to Grow Your Brand?</h2>
@@ -282,7 +191,7 @@ export async function HomePageOverride() {
           <div className="mb-10 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
             <div>
               <h2 className="text-2xl font-semibold tracking-[-0.02em] text-[#1a0f18] sm:text-3xl">
-                Latest {SITE_CONFIG.name} Press Releases
+                Latest {SITE_CONFIG.name} Press Media
               </h2>
               <p className="mt-1 text-sm text-[#5c4a52]">Recent wire items—update automatically from your feed.</p>
             </div>

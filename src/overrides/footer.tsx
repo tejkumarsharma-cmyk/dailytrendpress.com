@@ -14,8 +14,7 @@ const col = {
 
 const links = {
   product: [
-    { name: 'Press release archive', href: '/updates' },
-    { name: 'Pricing', href: '/pricing' },
+    { name: 'Press media archive', href: '/updates' },
     { name: 'Search', href: '/search' },
   ],
   company: [
@@ -25,13 +24,10 @@ const links = {
   ],
   resources: [
     { name: 'Help', href: '/help' },
-    { name: 'Developers', href: '/developers' },
-    { name: 'Status', href: '/status' },
   ],
   legal: [
     { name: 'Privacy', href: '/privacy' },
     { name: 'Terms', href: '/terms' },
-    { name: 'Licenses', href: '/licenses' },
   ],
 } as const
 

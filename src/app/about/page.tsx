@@ -39,9 +39,6 @@ export default function AboutPage() {
       description={`${SITE_CONFIG.name} is a press release newswire focused on structured announcements, honest reach reporting, and fast paths from draft to live.`}
       actions={
         <>
-          <Button variant="outline" asChild>
-            <Link href="/pricing">View pricing</Link>
-          </Button>
           <Button asChild>
             <Link href="/contact">Contact</Link>
           </Button>
